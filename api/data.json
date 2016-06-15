@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "question": "Why is my credit card being charged?",
+    "answer": "Your credit card is being charged because you bought something."
+  },
+   {
+    "id": 1,
+    "question": "How can I upgrade my subscription?",
+    "answer": "Click on one of the many upgrade links that we constantly email you about."
+  },
+  {
+   "id": 2,
+   "question": "Where can I update my payment information?",
+   "answer": "Under that big heading called 'Update Payment Info'."
+ },
+ {
+  "id": 3,
+  "question": "Do you offer a non-profit plan?",
+  "answer": "No, due to the physical nature of our product, we can't absorb the cost at the moment. Sign up to our newsletter to find out when we will offer this."
+}
+]
