@@ -8,13 +8,18 @@ $(document).ready(function() {
 
     var qandaContent = $('#qanda-content');
     var questionList = $('#questionList');
+    var categoryHeading = $('#categoryHeading');
 
     billingLink.click(function (){
       var resultData = [
-        { idNum: '0', question: 'is the world round', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { idNum: '1', question: 'is the world flat', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { idNum: '2', question: 'is the sky blue', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
+        { category: 'Billing', idNum: '0', question: 'is the world round', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
+        { category: 'Billing', idNum: '1', question: 'is the world flat', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
+        { category: 'Billing', idNum: '2', question: 'is the sky blue', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
       ]
+
+      var htmlCategoryArray = resultData.map(function(item){
+        return item.category;
+      });
 
       var htmlStringArray = resultData.map(function(item){
         return '<h3 id="sec' + item.idNum + '">' + item.question + '</h3><p>' + item.answer + '</p><hr>';
@@ -24,9 +29,12 @@ $(document).ready(function() {
         return '<li><a href="#sec' + item.idNum + '">' + item.question + '</a></li>';
       });
 
+      var poppedCategoryArray = htmlCategoryArray.splice(2,3);
+      var joinedCategoryArray = poppedCategoryArray.join('');
       var joinedHTMLString = htmlStringArray.join('');
       var joinedQuestionString = htmlQuestionArray.join('');
 
+          categoryHeading.html(joinedCategoryArray);
           qandaContent.html(joinedHTMLString);
           questionList.html(joinedQuestionString);
 
@@ -38,10 +46,14 @@ $(document).ready(function() {
 
     installationLink.click(function (){
       var resultData = [
-        { idNum: '0', question: 'How do I do it?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { idNum: '1', question: 'Where can I fix it?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { idNum: '2', question: 'When will it go live?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
+        { category: 'Installation', idNum: '0', question: 'How do I do it?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
+        { category: 'Installation', idNum: '1', question: 'Where can I fix it?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
+        { category: 'Installation', idNum: '2', question: 'When will it go live?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
       ]
+
+      var htmlCategoryArray = resultData.map(function(item){
+        return item.category;
+      });
 
       var htmlStringArray = resultData.map(function(item){
         return '<h3 id="sec' + item.idNum + '">' + item.question + '</h3><p>' + item.answer + '</p><hr>';
@@ -51,9 +63,12 @@ $(document).ready(function() {
         return '<li><a href="#sec' + item.idNum + '">' + item.question + '</a></li>';
       });
 
+      var poppedCategoryArray = htmlCategoryArray.splice(2,3);
+      var joinedCategoryArray = poppedCategoryArray.join('');
       var joinedHTMLString = htmlStringArray.join('');
       var joinedQuestionString = htmlQuestionArray.join('');
 
+          categoryHeading.html(joinedCategoryArray);
           qandaContent.html(joinedHTMLString);
           questionList.html(joinedQuestionString);
     });
@@ -64,10 +79,14 @@ $(document).ready(function() {
 
     operationsLink.click(function (){
       var resultData = [
-        { idNum: '0', question: 'Should do I do it?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { idNum: '1', question: 'Can I fix it?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { idNum: '2', question: 'Where will it go live?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
+        { category: 'Operations', idNum: '0', question: 'Should do I do it?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
+        { category: 'Operations', idNum: '1', question: 'Can I fix it?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
+        { category: 'Operations', idNum: '2', question: 'Where will it go live?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
       ]
+
+      var htmlCategoryArray = resultData.map(function(item){
+        return item.category;
+      });
 
       var htmlStringArray = resultData.map(function(item){
         return '<h3 id="sec' + item.idNum + '">' + item.question + '</h3><p>' + item.answer + '</p><hr>';
@@ -77,10 +96,12 @@ $(document).ready(function() {
         return '<li><a href="#sec' + item.idNum + '">' + item.question + '</a></li>';
       });
 
+      var poppedCategoryArray = htmlCategoryArray.splice(2,3);
+      var joinedCategoryArray = poppedCategoryArray.join('');
       var joinedHTMLString = htmlStringArray.join('');
       var joinedQuestionString = htmlQuestionArray.join('');
 
-
+          categoryHeading.html(joinedCategoryArray);
           qandaContent.html(joinedHTMLString);
           questionList.html(joinedQuestionString);
 
@@ -92,10 +113,14 @@ $(document).ready(function() {
 
     accountsLink.click(function (){
       var resultData = [
-        { idNum: '0', question: 'How Do I delete?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { idNum: '1', question: 'Update my image?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { idNum: '2', question: 'Change my username?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
+        { category: 'Accounts', idNum: '0', question: 'How Do I delete?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
+        { category: 'Accounts', idNum: '1', question: 'Update my image?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
+        { category: 'Accounts', idNum: '2', question: 'Change my username?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
       ]
+
+      var htmlCategoryArray = resultData.map(function(item){
+        return item.category;
+      });
 
       var htmlStringArray = resultData.map(function(item){
         return '<h3 id="sec' + item.idNum + '">' + item.question + '</h3><p>' + item.answer + '</p><hr>';
@@ -105,10 +130,12 @@ $(document).ready(function() {
         return '<li><a href="#sec' + item.idNum + '">' + item.question + '</a></li>';
       });
 
-
+      var poppedCategoryArray = htmlCategoryArray.splice(2,3);
+      var joinedCategoryArray = poppedCategoryArray.join('');
       var joinedHTMLString = htmlStringArray.join('');
       var joinedQuestionString = htmlQuestionArray.join('');
 
+          categoryHeading.html(joinedCategoryArray);
           qandaContent.html(joinedHTMLString);
           questionList.html(joinedQuestionString);
 
