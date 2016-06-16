@@ -30,6 +30,7 @@ $('a[href*=#]:not([href=#])').click(function() {
 });
 });
 
+
 /* ajax call for listing questions */
 
 $(function (){

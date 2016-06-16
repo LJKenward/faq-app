@@ -1,10 +1,37 @@
+footer {
+  border-top: 1px solid #c1e1ec;
+  height: 50px;
+  margin-top: 10px
+}
+
+footer p {
+  line-height: 50px;
+  margin-bottom: 0;
+}
+
+.navbar {
+  background-color: #ff824c;
+}
+
+.navbar-default .navbar-brand {
+  color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+
 body {
  padding-top:50px;
+ font-family: 'Montserrat', sans-serif;
+ color: grey;
 }
 
 #masthead {
  min-height:250px;
-}
+ background-image:url(http://i.imgbox.com/Kkz9pV0z.png);
+ background-repeat: repeat-y repeat-x;
+ }
 
 #masthead h1 {
  font-size: 30px;
@@ -14,6 +41,44 @@ body {
 
 #masthead .well {
  margin-top:8%;
+}
+
+h1 {
+  font-family: 'Bree Serif', serif;
+  color: black;
+}
+
+h2 {
+  font-family: 'Bree Serif', serif;
+  color: black;
+}
+
+h3 {
+  font-family: 'Bree Serif', serif;
+  color: black;
+}
+
+h4 {
+  font-family: 'Bree Serif', serif;
+  color: black;
+}
+
+h5 {
+  font-family: 'Bree Serif', serif;
+  color: black;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+    text-decoration: none;
+    background-color: #ffea93;
+}
+
+a {
+  color: black;
+}
+
+a:hover, a:focus {
+    color: black;
 }
 
 @media screen and (min-width: 768px) {
