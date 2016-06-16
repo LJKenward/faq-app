@@ -1,4 +1,4 @@
-/* activate sidebar */ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/* activate sidebar */
 $(document).ready(function() {
 
     var billingLink = $('#billingLink');
@@ -7,6 +7,7 @@ $(document).ready(function() {
     var accountsLink = $('#accountsLink');
 
     var qandaContent = $('#qanda-content');
+    var questionList = $('#questionList');
 
     billingLink.click(function (){
       var resultData = [
@@ -19,8 +20,16 @@ $(document).ready(function() {
         return '<h3 id="sec' + item.idNum + '">' + item.question + '</h3><p>' + item.answer + '</p><hr>';
       });
 
+      var htmlQuestionArray = resultData.map(function(item) {
+        return '<li><a href="#sec' + item.idNum + '">' + item.question + '</a></li>';
+      });
+
       var joinedHTMLString = htmlStringArray.join('');
+      var joinedQuestionString = htmlQuestionArray.join('');
+
           qandaContent.html(joinedHTMLString);
+          questionList.html(joinedQuestionString);
+
     });
 
 /* end billing function*/
@@ -38,9 +47,15 @@ $(document).ready(function() {
         return '<h3 id="sec' + item.idNum + '">' + item.question + '</h3><p>' + item.answer + '</p><hr>';
       });
 
+      var htmlQuestionArray = resultData.map(function(item) {
+        return '<li><a href="#sec' + item.idNum + '">' + item.question + '</a></li>';
+      });
+
       var joinedHTMLString = htmlStringArray.join('');
+      var joinedQuestionString = htmlQuestionArray.join('');
 
           qandaContent.html(joinedHTMLString);
+          questionList.html(joinedQuestionString);
     });
 
 /* end installationLink function */
@@ -58,9 +73,17 @@ $(document).ready(function() {
         return '<h3 id="sec' + item.idNum + '">' + item.question + '</h3><p>' + item.answer + '</p><hr>';
       });
 
+      var htmlQuestionArray = resultData.map(function(item) {
+        return '<li><a href="#sec' + item.idNum + '">' + item.question + '</a></li>';
+      });
+
       var joinedHTMLString = htmlStringArray.join('');
+      var joinedQuestionString = htmlQuestionArray.join('');
+
 
           qandaContent.html(joinedHTMLString);
+          questionList.html(joinedQuestionString);
+
     });
 
 /* end operations function*/
@@ -78,12 +101,34 @@ $(document).ready(function() {
         return '<h3 id="sec' + item.idNum + '">' + item.question + '</h3><p>' + item.answer + '</p><hr>';
       });
 
+      var htmlQuestionArray = resultData.map(function(item) {
+        return '<li><a href="#sec' + item.idNum + '">' + item.question + '</a></li>';
+      });
+
+
       var joinedHTMLString = htmlStringArray.join('');
+      var joinedQuestionString = htmlQuestionArray.join('');
 
           qandaContent.html(joinedHTMLString);
+          questionList.html(joinedQuestionString);
+
+
     });
 
 /* end accountsLink function*/
+
+
+
+
+    /* $('#link')
+    {attributes: [ {name: 'thing', href: 'http:'}, jQueryStuff:
+    {click: function(callback){
+    element.onClick() => execute calback()
+    }
+    } ]}
+    */
+
+  //Read specific content from local JSON file and display it
 
     $('#sidebar').affix({
         offset: {
@@ -118,25 +163,25 @@ $(document).ready(function() {
 
 /* ajax call for listing questions */
 
-$(function() {
-
-    var $questions = $('#questions');
-
-    function listQuestions(question) {
-        $questions.append('<li><a href="#sec' + question.id + '">' + question.question + '</a></li>');
-    }
-
-    $.ajax({
-        type: 'GET',
-        url: '/api/data.json',
-        success: function(questions) {
-            // console.log('success', data);
-            $.each(questions, function(i, question) {
-                listQuestions(question);
-            });
-        }
-    });
-
-});
+// $(function() {
+//
+//     var $questions = $('#questions');
+//
+//     function listQuestions(question) {
+//         $questions.append('<li><a href="#sec' + question.id + '">' + question.question + '</a></li>');
+//     }
+//
+//     $.ajax({
+//         type: 'GET',
+//         url: '/api/data.json',
+//         success: function(questions) {
+//             // console.log('success', data);
+//             $.each(questions, function(i, question) {
+//                 listQuestions(question);
+//             });
+//         }
+//     });
+//
+// });
 
 /* end ajax call */
