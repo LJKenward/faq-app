@@ -1,161 +1,46 @@
-/* activate sidebar */
 $(document).ready(function() {
 
-    var billingLink = $('#billingLink');
-    var installationLink = $('#installationLink');
-    var operationsLink = $('#operationsLink');
-    var accountsLink = $('#accountsLink');
+  // get data from json file
 
-    var qandaContent = $('#qanda-content');
-    var questionList = $('#questionList');
-    var categoryHeading = $('#categoryHeading');
 
-    billingLink.click(function (){
-      var resultData = [
-        { category: 'Billing', idNum: '0', question: 'is the world round', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { category: 'Billing', idNum: '1', question: 'is the world flat', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { category: 'Billing', idNum: '2', question: 'is the sky blue', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-      ]
+  //get all li inside the ul and add click handlers
+  $('ul.sidebar li').click(function(e) {
+      //get the element we clicked on
+      var category = $(this)[0].id;
 
-      var htmlCategoryArray = resultData.map(function(item){
-        return item.category;
+      //make API call for data
+      $.getJSON( "api/data.json", function(data){
+
+        var filteredArray = data.filter(function(item){
+          if (item.category == category){
+            return item;
+          }
+        });
+
+        var questionOnly = filteredArray.map(function(item){
+          return '<li>' + item.question + '</li>';
+        });
+
+        var qAndA = filteredArray.map(function(item){
+          return '<h3>' + item.question + '</h3>' +
+            '<p>' + item.answer + '</p>';
+        });
+
+        var questionHtml = questionOnly.join('');
+
+        var qAndAHtml = qAndA.join('');
+
+        $('#categoryHeading').html('<h1>' + category + '</h1>')
+        $('#questionList').html(questionHtml);
+        $('#qanda-content').html(qAndAHtml);
+
       });
 
-      var htmlStringArray = resultData.map(function(item){
-        return '<h3 id="sec' + item.idNum + '">' + item.question + '</h3><p>' + item.answer + '</p><hr>';
-      });
-
-      var htmlQuestionArray = resultData.map(function(item) {
-        return '<li><a href="#sec' + item.idNum + '">' + item.question + '</a></li>';
-      });
-
-      var poppedCategoryArray = htmlCategoryArray.splice(2,3);
-      var joinedCategoryArray = poppedCategoryArray.join('');
-      var joinedHTMLString = htmlStringArray.join('');
-      var joinedQuestionString = htmlQuestionArray.join('');
-
-          categoryHeading.html(joinedCategoryArray);
-          qandaContent.html(joinedHTMLString);
-          questionList.html(joinedQuestionString);
-
-    });
-
-/* end billing function*/
-
-/* start installation function*/
-
-    installationLink.click(function (){
-      var resultData = [
-        { category: 'Installation', idNum: '0', question: 'How do I do it?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { category: 'Installation', idNum: '1', question: 'Where can I fix it?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { category: 'Installation', idNum: '2', question: 'When will it go live?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-      ]
-
-      var htmlCategoryArray = resultData.map(function(item){
-        return item.category;
-      });
-
-      var htmlStringArray = resultData.map(function(item){
-        return '<h3 id="sec' + item.idNum + '">' + item.question + '</h3><p>' + item.answer + '</p><hr>';
-      });
-
-      var htmlQuestionArray = resultData.map(function(item) {
-        return '<li><a href="#sec' + item.idNum + '">' + item.question + '</a></li>';
-      });
-
-      var poppedCategoryArray = htmlCategoryArray.splice(2,3);
-      var joinedCategoryArray = poppedCategoryArray.join('');
-      var joinedHTMLString = htmlStringArray.join('');
-      var joinedQuestionString = htmlQuestionArray.join('');
-
-          categoryHeading.html(joinedCategoryArray);
-          qandaContent.html(joinedHTMLString);
-          questionList.html(joinedQuestionString);
-    });
-
-/* end installationLink function */
-
-/* start Operations function*/
-
-    operationsLink.click(function (){
-      var resultData = [
-        { category: 'Operations', idNum: '0', question: 'Should do I do it?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { category: 'Operations', idNum: '1', question: 'Can I fix it?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { category: 'Operations', idNum: '2', question: 'Where will it go live?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-      ]
-
-      var htmlCategoryArray = resultData.map(function(item){
-        return item.category;
-      });
-
-      var htmlStringArray = resultData.map(function(item){
-        return '<h3 id="sec' + item.idNum + '">' + item.question + '</h3><p>' + item.answer + '</p><hr>';
-      });
-
-      var htmlQuestionArray = resultData.map(function(item) {
-        return '<li><a href="#sec' + item.idNum + '">' + item.question + '</a></li>';
-      });
-
-      var poppedCategoryArray = htmlCategoryArray.splice(2,3);
-      var joinedCategoryArray = poppedCategoryArray.join('');
-      var joinedHTMLString = htmlStringArray.join('');
-      var joinedQuestionString = htmlQuestionArray.join('');
-
-          categoryHeading.html(joinedCategoryArray);
-          qandaContent.html(joinedHTMLString);
-          questionList.html(joinedQuestionString);
-
-    });
-
-/* end operations function*/
-
-/* start accountsLink function*/
-
-    accountsLink.click(function (){
-      var resultData = [
-        { category: 'Accounts', idNum: '0', question: 'How Do I delete?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { category: 'Accounts', idNum: '1', question: 'Update my image?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-        { category: 'Accounts', idNum: '2', question: 'Change my username?', answer: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.'},
-      ]
-
-      var htmlCategoryArray = resultData.map(function(item){
-        return item.category;
-      });
-
-      var htmlStringArray = resultData.map(function(item){
-        return '<h3 id="sec' + item.idNum + '">' + item.question + '</h3><p>' + item.answer + '</p><hr>';
-      });
-
-      var htmlQuestionArray = resultData.map(function(item) {
-        return '<li><a href="#sec' + item.idNum + '">' + item.question + '</a></li>';
-      });
-
-      var poppedCategoryArray = htmlCategoryArray.splice(2,3);
-      var joinedCategoryArray = poppedCategoryArray.join('');
-      var joinedHTMLString = htmlStringArray.join('');
-      var joinedQuestionString = htmlQuestionArray.join('');
-
-          categoryHeading.html(joinedCategoryArray);
-          qandaContent.html(joinedHTMLString);
-          questionList.html(joinedQuestionString);
-
-
-    });
-
-/* end accountsLink function*/
+  });
 
 
 
-
-    /* $('#link')
-    {attributes: [ {name: 'thing', href: 'http:'}, jQueryStuff:
-    {click: function(callback){
-    element.onClick() => execute calback()
-    }
-    } ]}
-    */
-
-  //Read specific content from local JSON file and display it
+/* sicky side bar */
 
     $('#sidebar').affix({
         offset: {
@@ -173,42 +58,47 @@ $(document).ready(function() {
     });
 
     /* smooth scrolling sections */
-    $('a[href*=#]:not([href=#])').click(function() {
+    $(document).on("click", 'a[href*=#]:not([href=#])', function() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length) {
                 $('html,body').animate({
-                    scrollTop: target.offset().top - 50
+                    scrollTop: target.offset().top - 60
                 }, 1000);
                 return false;
             }
         }
+        return false;
     });
+
+// back to top button
+
+    // browser window scroll (in pixels) after which the "back to top" link is shown
+	var offset = 300,
+		//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+		offset_opacity = 1200,
+		//duration of the top scrolling animation (in ms)
+		scroll_top_duration = 700,
+		//grab the "back to top" link
+		$back_to_top = $('.cd-top');
+
+	//hide or show the "back to top" link
+	$(window).scroll(function(){
+		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+		if( $(this).scrollTop() > offset_opacity ) {
+			$back_to_top.addClass('cd-fade-out');
+		}
+	});
+
+	//smooth scroll to top
+	$back_to_top.on('click', function(event){
+		event.preventDefault();
+		$('body,html').animate({
+			scrollTop: 0 ,
+		 	}, scroll_top_duration
+		);
+	});
+
+
 });
-
-
-/* ajax call for listing questions */
-
-// $(function() {
-//
-//     var $questions = $('#questions');
-//
-//     function listQuestions(question) {
-//         $questions.append('<li><a href="#sec' + question.id + '">' + question.question + '</a></li>');
-//     }
-//
-//     $.ajax({
-//         type: 'GET',
-//         url: '/api/data.json',
-//         success: function(questions) {
-//             // console.log('success', data);
-//             $.each(questions, function(i, question) {
-//                 listQuestions(question);
-//             });
-//         }
-//     });
-//
-// });
-
-/* end ajax call */

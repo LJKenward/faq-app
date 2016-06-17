@@ -1,5 +1,4 @@
-{
-  "Billing": [
+[
     {
       "idNum": 0,
       "question": "Why is my credit card being charged?",
@@ -17,26 +16,59 @@
       "question": "Where can I update my payment information?",
       "answer": "Under that big heading called 'Update Payment Info'.",
       "category": "Billing"
-    }
-  ],
-  "Installation": [
+    },
     {
       "idNum": 3,
-      "question": "Do you offer a non-profit plan?",
-      "answer": "No, due to the physical nature of our product, we can't absorb the cost at the moment. Sign up to our newsletter to find out when we will offer this.",
+      "question": "My installing failed, what now?",
+      "answer": "Put paper in the floppy drive. Restart your TV, spill coffee on your keyboard. You should be good to go now.",
       "category": "Installation"
     },
     {
       "idNum": 4,
-      "question": "Why is my credit card being charged?",
-      "answer": "Your credit card is being charged because you bought something.",
+      "question": "Can I install another version on a different website?",
+      "answer": "Not right now, we only offer single license use, if you need another installation you'll have to buy the product again. In the future we plan to have a multi-installation offer.",
       "category": "Installation"
-    }
-  ],
-  "Operations": [
-
-  ],
-  "Account": [
-
-  ]
-}
+    },
+    {
+      "idNum": 5,
+      "question": "Can you install this for me?",
+      "answer": "As this is open source software we do not offer installation at this time. We have great documentation to take you through it step by step and we are here to help. Give it a go!",
+      "category": "Installation"
+    },
+  {
+    "idNum": 6,
+    "question": "I've clicked on the big green Go button but nothing happens?",
+    "answer": "Our product uses the internet to connect with a backend server, the most common issue is that you are not connected to the internet or your connection is slow and the request timed out. Connect the the internet.",
+    "category": "Operations"
+  },
+  {
+    "idNum": 7,
+    "question": "The _____ page is freezing up?",
+    "answer": "Bummer, we are really sorry. If you're internet connection is fine then this is a matter to do with our server. Please click the 'report bug' on the page that freezes and we'll get a notification to fix it. Sorry again, we're working through it.",
+    "category": "Operations"
+  },
+  {
+    "idNum": 8,
+    "question": "Can I import a .cvs file with my data on it?",
+    "answer": "You sure can! We make it as easy as possible to get up and running, head to the Getting Started > Import > Upload File area, and select your column structure to import into the correct fields.",
+    "category": "Operations"
+  },
+  {
+    "idNum": 9,
+    "question": "How can I change my profile picture?",
+    "answer": "Head over to the Account Dashboard and click on the current profile picture, this will bring up a file upload page. We recommend uploading an image thats 800px by 800px and no more that 5mb.",
+    "category": "Account"
+  },
+  {
+    "idNum": 10,
+    "question": "I've got team members, can I add them to my account?",
+    "answer": "At this stage we only facilitate one other team member. Your account is the Administration account, which has access to update billing information, and you can add one team member as an Operational Member, who has full access to the dashboard but can't access or edit the account details. Go to Accounts > Team > Add Operational Member and fill out the details.",
+    "category": "Account"
+  },
+  {
+    "idNum": 11,
+    "question": "Where do I cancel my account?",
+    "answer": "Bummer, we are really sorry to see you go! We encourage you to email our team and see if they can help remedy any issues you're having. If you're ready to go though head to Account > Cancel, and click the Cancel button. You'll be asked to enter your account password. And remember, you're always welcome back :) ",
+    "category": "Account"
+  }
+]
