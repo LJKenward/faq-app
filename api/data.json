@@ -1,62 +1,62 @@
 [
     {
       "idNum": 0,
-      "question": "Why is my credit card being charged?",
-      "answer": "Your credit card is being charged because you bought something.",
+      "question": "When does my credit card get charged?",
+      "answer": "For monthly payments if you choose the monthly billing plan, your account will automatically be billed every 30 days. In the event of a billing failure, you will receive an email. Our monthly payment cycle charges every 30 days, so payment won't be taken out on the exact same date of each month. For Yearly payments if you choose the annual billing plan, you will be charged every year after your initial purchase. You will receive an email 2 weeks before your year is up as a reminder that you will be billed. You can see when the plan renews automatically each month/year by logging in your account and going to you Subscriptions page.",
       "category": "Billing"
     },
     {
       "idNum": 1,
-      "question": "How can I upgrade my subscription?",
-      "answer": "Click on one of the many upgrade links that we constantly email you about.",
+      "question": "How can I downgrade my subscription?",
+      "answer": "Head to the Accounts > Settings > Change Subscription page. You will then be shown the date that your plan will return to Free, and what the Free plan offers in comparison to your current Pro plan. Click 'Confirm & stop renewal' to cancel your current subscription. If you change your mind, you can upgrade back to a Pro subscription at anytime here. If you're within the 30 days money back period after your first purchase, a refund will be processed automatically. When you downgrade to a free plan, we will not delete anything from your account. The oldest information exceeding the limits of the free account will be hidden.",
       "category": "Billing"
     },
     {
       "idNum": 2,
       "question": "Where can I update my payment information?",
-      "answer": "Under that big heading called 'Update Payment Info'.",
+      "answer": "If you would like to change your credit card information you can do so by signing into your account and going to your Subscriptions page. Click on the pencil icon next to your current details. Then, enter in your new card details on the next screen and click 'Save Changes'. Depending on your card or bank, you may see a small amount charged and then immediately refunded. This is simply a test transaction so we can verify your new payment details are authorized.  You will not be charged the regular amount until your account's next payment date.",
       "category": "Billing"
     },
     {
       "idNum": 3,
-      "question": "My installing failed, what now?",
-      "answer": "Put paper in the floppy drive. Restart your TV, spill coffee on your keyboard. You should be good to go now.",
+      "question": "Do I need to UnInstall Anything?",
+      "answer": "You can safely install on top of your current version. The installer will detect when it is necessary to uninstall the older version first, and it will offer to do it automatically. This is usally only needed when there have been some big changes, such as added or removed components. In most cases the existing version can be upgraded directly and all your settings are preserved.",
       "category": "Installation"
     },
     {
       "idNum": 4,
-      "question": "Can I install another version on a different website?",
-      "answer": "Not right now, we only offer single license use, if you need another installation you'll have to buy the product again. In the future we plan to have a multi-installation offer.",
+      "question": "Why does my browser claim that the download is not safe?",
+      "answer": "After every new release there people who report that their browser or AV software blocks the installer and shows a warning that it is not safe. This is because these programs use a heuristic that marks any newly released file as suspicious. For example Norton AV reports new files as WS.Reputation.1, which means - not enough downloads yet for this file to gain the necessary reputation. If you can't figure it out or if you want to play it safe you can wait a few days until the new version has gained reputation and is added to the 'nice' list by the AV developers.",
       "category": "Installation"
     },
     {
       "idNum": 5,
-      "question": "Can you install this for me?",
-      "answer": "As this is open source software we do not offer installation at this time. We have great documentation to take you through it step by step and we are here to help. Give it a go!",
+      "question": "Why can't I upload a new profile picture?",
+      "answer": "If you don't see anything on your user profile pages to let you upload user images then it's usually one of a few things. The permissions associated with the role you are using are preventing you from changing your profile picture. MyStartUp is not installed, or is not enabled on your server. Make sure MyStartUp has been included in your installation. You can check this by going to Site Administration > Server > MyStartUp info and looking for the version settings. This setting is chosen automatically every time you visit that page. Save that configuration page and go back to your user profile.",
       "category": "Installation"
     },
   {
     "idNum": 6,
-    "question": "I've clicked on the big green Go button but nothing happens?",
-    "answer": "Our product uses the internet to connect with a backend server, the most common issue is that you are not connected to the internet or your connection is slow and the request timed out. Connect the the internet.",
+    "question": "How does the search function work?",
+    "answer": "The way our Search function works is dependent on an algorithm we call 'StartUpRank'. StartUpRank pulls the search results based upon a variety of variables such as the wording of your search, the content of your data, and profile descriptions and the popularity of profiles. Each profile has a 'StartUpRank' that is calculated by a wide variety of factors. These factors include, but are not limited to; the number of likes, reposts, and followers associated with specific accounts. All of these factors work together to give the most popular and relevant results for a search. For example, if an exact Profile URL was put into search, there may be profiles which have a wider network of popularity which will rank higher than an exact word match.",
     "category": "Operations"
   },
   {
     "idNum": 7,
-    "question": "The _____ page is freezing up?",
-    "answer": "Bummer, we are really sorry. If you're internet connection is fine then this is a matter to do with our server. Please click the 'report bug' on the page that freezes and we'll get a notification to fix it. Sorry again, we're working through it.",
+    "question": "How can I turn on Notifications?",
+    "answer": "We offer on-site notifications, email notifications, and an activity feed on the Android Pulse app so you can stay up-to-date with how you are performing on MyStartUp. On-site notifications can be found at the top of your header under the bell icon. If you have a new notification, a red dot will appear. Notifications include new followers, and likes, reposts, and comments made on your profile. Email notifications, you can see and manage what email notifications you want to receive in your Notifications Settings page. Please note: Email notifications about followers are no longer available.",
     "category": "Operations"
   },
   {
     "idNum": 8,
-    "question": "Can I import a .cvs file with my data on it?",
-    "answer": "You sure can! We make it as easy as possible to get up and running, head to the Getting Started > Import > Upload File area, and select your column structure to import into the correct fields.",
+    "question": "Why can't I access the profiles offline?",
+    "answer": "If recently added profiles are not showing up in your saved Collection offline, first check your Offline Settings page. If you have enabled saving offline only over a Wi-Fi connection and are trying to save over a 3G or LTE connection, either connect to Wi-Fi or disable the 'Only save via Wi-Fi' setting. The profiles you have saved offline are temporary locally stored in your mobile device’s cache. This means that if you have reset your cache, you will lose what you have chosen to save offline. Please consider whether you are prepared to re-save your Collection for offline listening before resetting your cache. ",
     "category": "Operations"
   },
   {
     "idNum": 9,
-    "question": "How can I change my profile picture?",
-    "answer": "Head over to the Account Dashboard and click on the current profile picture, this will bring up a file upload page. We recommend uploading an image thats 800px by 800px and no more that 5mb.",
+    "question": "I forgot the email address associated with my account.",
+    "answer": "If you have forgotten the email address attached to your profile and would like to sign in, don’t worry! You can sign in with account's profile URL instead. If you have connected your Facebook or Twitter account to your MyStartUp account, then you can try to sign in with the 'Sign in with Facebook or Twitter' icons to regain access. Send a password recovery link for your account by entering your MyStartUp profile URL in the secton on the Recovery Password Page. This will send a password recovery link to the primary email address that is registered to the account.",
     "category": "Account"
   },
   {

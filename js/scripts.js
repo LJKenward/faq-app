@@ -1,11 +1,8 @@
 $(document).ready(function() {
 
-  // get data from json file
-
-
   //get all li inside the ul and add click handlers
   $('ul.sidebar li').click(function(e) {
-      //get the element we clicked on
+      //get the element clicked on
       var category = $(this)[0].id;
 
       //make API call for data
@@ -18,11 +15,11 @@ $(document).ready(function() {
         });
 
         var questionOnly = filteredArray.map(function(item){
-          return '<li>' + item.question + '</li>';
+          return '<li><a href="#sec-' + item.idNum + '">' + item.question + '</a></li>';
         });
 
         var qAndA = filteredArray.map(function(item){
-          return '<h3>' + item.question + '</h3>' +
+          return '<h3 id="sec-' + item.idNum + '">' + item.question + '</h3>' +
             '<p>' + item.answer + '</p>';
         });
 
@@ -37,7 +34,6 @@ $(document).ready(function() {
       });
 
   });
-
 
 
 /* sicky side bar */
